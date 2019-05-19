@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row view">
+    <div class="col-md-5 col-sm-6 offset-sm-3 col-6 offset-3  box text-truncate">
+      
+      <section class="text-center font-weight-bold">Are you ready to join ?</section>
+      <hr>
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-sm-6 offset-sm-3" style=" overflow: hidden;">
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-6">
+                    <label for="name">
+                         Name * <br>
+                        <input type="text" class="form-control" formControlName="name" id="name" >
+                      </label> 
+                      <div class="alert text"  *ngIf="!signupForm.controls['name'].valid && signupForm.controls['name'].touched">*This is required</div>
+                </div>
+                
+              </div> 
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="email">
+                    Email * <br>
+                    <input type="email" id="email" class="form-control" formControlName="email">
+                  </label>
+                  <div class="alert text "  *ngIf="!signupForm.controls['email'].valid && signupForm.controls['email'].touched">*This is required</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="password">
+                      Password * <br>
+                      <input type="password" class="form-control" id="password" formControlName="password">
+                    </label>
+                    <div class="alert text"  *ngIf="!signupForm.controls['password'].valid && signupForm.controls['password'].touched">*This is required</div>
+                  </div>
+              </div><br>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="userName">
+                      User Name * <br>
+                      <input type="text" id="userName" class="form-control" formControlName="userName">
+                    </label>
+                    <div class="alert text"  *ngIf="!signupForm.controls['userName'].valid && signupForm.controls['userName'].touched">*This is required</div>
+                    
+                  </div>
+                
+                </div><br>
+                <div style="text-align:center !important">
+                    <button class="btn btn-success" type="submit" [disabled]="!signupForm.valid">&nbsp;&nbsp;Ready To Signup&nbsp;&nbsp;  </button>
+                </div>   
+                <br><br>
+                <button type="button" class="btn btn-info float-right" [routerLink]="['/login']">Login</button>  <br><br>    
+             </form>
+             <br> <br> 
+        </div>
+      </div><br>
+    </div>
+  
+  
+  </div>
+  
+  
+</div>
