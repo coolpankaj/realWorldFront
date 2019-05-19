@@ -79,7 +79,7 @@
 
         <div class="row" *ngIf="receiverName">
           <div class="col-md-12 col-sm-12">
-            <div  class="chat-history col-md-12" style="height:50vh;">
+            <div   #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight" class="chat-history col-md-12" style="height:50vh;">
 
               <ul style="list-style-type: none;">
               
@@ -98,7 +98,7 @@
 
                   </div>
                   <div class="message" [ngClass]="{'float-right other-message': message.senderId == userInfo.userId, 'my-message': message.senderId != userInfo.userId}">
-                    {{message?.message }}
+                    {{message?.message | emojify }}
                   </div>
                 </li>
 

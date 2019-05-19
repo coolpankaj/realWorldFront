@@ -15,7 +15,7 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('textmessage') textmessage: any;
-  @ViewChild('scrollMe', { read: ElementRef })
+  @ViewChild('scrollMe', { read: ElementRef }) scrollMe: any;
 
   public scrollToChatTop = false;
 
@@ -107,6 +107,7 @@ public userSelectedToChat: any = (id, name) => {
     userId: this.userInfo.userId,
     senderId: id
   };
+  this.scrollToChatTop = false;
 
   this.getPreviousChatWithAUser();
 
@@ -179,6 +180,7 @@ public getMessageFromAUser: any = () => {
     this.toastr.successToastr(`${data.senderName} says : ${data.message}`);
 
     this.scrollToChatTop = false;
+    
 
   }); // end subscribe
 
@@ -189,12 +191,12 @@ public getPreviousChatWithAUser: any = () => {
 
   this.appService.getChat(this.userInfo.userId, this.receiverId, this.pageValue * 10).subscribe((apiResponse) => {
 
-    console.log(apiResponse);
+    // console.log(apiResponse);
 
     if (apiResponse.status === 200) {
 
       this.messageList = apiResponse.data.concat(previousData);
-      console.log(this.messageList);
+     // console.log(this.messageList);
 
     } else {
 
@@ -202,7 +204,6 @@ public getPreviousChatWithAUser: any = () => {
       this.toastr.warningToastr(apiResponse.message);
     }
 
-    this.loadingPreviousChat = false;
 
   }, (err) => {
 

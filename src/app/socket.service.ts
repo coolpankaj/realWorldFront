@@ -11,7 +11,8 @@ import { HttpErrorResponse, HttpParams } from '@angular/common/http';
 })
 export class SocketService {
 
-  public url = "http://localhost:3000";
+ // public url = "http://localhost:3000";
+ public url = 'http://realapi.coolcoder.xyz';
   
   private socket;
 

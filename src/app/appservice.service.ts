@@ -8,7 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppserviceService {
 
-  private baseUrl = 'http://localhost:3000/api/v1';
+ // private baseUrl = 'http://localhost:3000/api/v1';
+ private baseUrl = 'http://realapi.coolcoder.xyz/api/v1';
 
   constructor(public http: HttpClient, public cookie: CookieService) {}
 

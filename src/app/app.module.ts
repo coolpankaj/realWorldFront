@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component'; 
-import { PickerModule } from '@ctrl/ngx-emoji-mart'
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { EmojifyModule } from 'angular-emojify';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PickerModule
+    PickerModule,
+    EmojifyModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
